@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple Concept</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="//fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" />
+    <style>
+      body {
+        background: #92c1dc;
+      }
+
+      .banner {
+        width: 60%;
+        max-width: 1000px;
+        margin: 25px auto;
+        padding: 50px 80px 80px;
+        background: #fff;
+        text-align: center;
+        font-family: 'Indie Flower';
+        font-size: 2.5vw;
+      }
+      .banner .logo {
+        width: 280px;
+        max-width: 100%;
+      }
+
+      @media (max-width: 959px) {
+        .banner {
+          width: 80%;
+          font-size: 3vw;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .banner {
+          width: 90%;
+          font-size: 4.5vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner" class="banner">
+      <img src="/images/logo.png" class="logo" />
+      <div class="title">Thoughts, concepts and ideas.</div>
+    </div>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script>
+      (function($) {
+        $(function() {
+          $('#banner').imagesLoaded(function() {
+            function resizeBanner() {
+              var $banner = $('#banner');
+              var bannerHeight = $banner.outerHeight();
+              var windowHeight = $(window).innerHeight();
+              var top = Math.max((windowHeight - bannerHeight)/2, 25);
+              $banner.offset({ top: top });
+            }
+            $(window).resize(resizeBanner).resize();
+          });
+        });
+      })(jQuery);
+    </script>
+  </body>
+</html>
+

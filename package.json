@@ -1,0 +1,14 @@
+{
+  "name": "simcept-api-server",
+  "version": "0.1.0",
+  "description": "Simcept API Server",
+  "author": "Tim Wong <cytimo@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
+
